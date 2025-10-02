@@ -27,25 +27,15 @@ int main()
 
     camera.Position = glm::vec3(0, 0, 10);
 
-    std::vector<gdl::graphics::Vertex> vert;
 
-    vert.push_back({ gdl::tools::Vector3(-0.5f,  0.5f, 0.0f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f,  0.5f, 0.0f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f, -0.5f, 0.0f) });
-	vert.push_back({ gdl::tools::Vector3(-0.5f, -0.5f, 0.0f) });
-
-    std::vector<u32> idx = {
-    	0, 1, 2,
-		2, 3, 0
-    };
-
-    gdl::graphics::Mesh mesh(vert, idx);
 
     std::vector<gdl::graphics::Mesh> meshes;
     meshes.push_back(m_square());
 
+    gdl::graphics::Mesh cube = m_cube();
+
     gdl::graphics::Model model1(meshes);
-    gdl::graphics::Model model2(meshes);
+    gdl::graphics::Model model2(cube);
 
 
     //model2.position.x = 2;
@@ -54,8 +44,14 @@ int main()
     gdl::components::Transform t1(&model1);
     gdl::components::Renderer r1(t1);
 
+    //t1.position.x = -5;
+
     gdl::components::Transform t2(&model2);
     gdl::components::Renderer r2(t2);
+
+    t2.position.y = -3;
+
+    t2.set_parent(&t1);
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -67,19 +63,19 @@ int main()
         gdl::engine::Input::update(window.get_win());
         gdl::engine::Time::update();
 
-        if(gdl::engine::Input::key_hold(GLFW_KEY_A)) std::cout << "a\n";
+        if(gdl::engine::Input::key_hold(GLFW_KEY_A)) t2.local_position.x += 2 * gdl::engine::Time::delta;
+
+        std::cout << t2.position.x << ", "
+        		  << t2.position.y << ", "
+				  << t2.position.z << std::endl;
 
 
-
-        //model1.rotation.z = glfwGetTime() * 30;
-        //model1.draw(shader, camera);
-
-        //model2.draw(shader, camera);
+        t1.local_rotation.x += gdl::engine::Time::delta * 30;
+        t1.local_rotation.y += gdl::engine::Time::delta * 30;
+        t1.local_rotation.z += gdl::engine::Time::delta * 30;
 
         gdl::components::Transform::update(t1);
         gdl::components::Transform::update(t2);
-        t1.position.x += gdl::engine::Time::delta;
-
 
         r1.draw(shader, camera);
         r2.draw(shader, camera);

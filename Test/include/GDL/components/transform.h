@@ -27,6 +27,10 @@ public:
 	gdl::tools::Vector3 rotation;
 	gdl::tools::Vector3 scale;
 
+	gdl::tools::Vector3 right;
+	gdl::tools::Vector3 up;
+	gdl::tools::Vector3 forward;
+
 	Transform(gdl::graphics::Model* m = NULL);
 
 	Transform* get_child(u32 idx);
