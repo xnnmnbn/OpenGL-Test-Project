@@ -4,19 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/GDL/tools/vector.cpp \
-../src/GDL/tools/vector2.cpp \
-../src/GDL/tools/vector3.cpp 
+../src/GDL/tools/vector.cpp 
 
 CPP_DEPS += \
-./src/GDL/tools/vector.d \
-./src/GDL/tools/vector2.d \
-./src/GDL/tools/vector3.d 
+./src/GDL/tools/vector.d 
 
 OBJS += \
-./src/GDL/tools/vector.o \
-./src/GDL/tools/vector2.o \
-./src/GDL/tools/vector3.o 
+./src/GDL/tools/vector.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -31,7 +25,7 @@ src/GDL/tools/%.o: ../src/GDL/tools/%.cpp src/GDL/tools/subdir.mk
 clean: clean-src-2f-GDL-2f-tools
 
 clean-src-2f-GDL-2f-tools:
-	-$(RM) ./src/GDL/tools/vector.d ./src/GDL/tools/vector.o ./src/GDL/tools/vector2.d ./src/GDL/tools/vector2.o ./src/GDL/tools/vector3.d ./src/GDL/tools/vector3.o
+	-$(RM) ./src/GDL/tools/vector.d ./src/GDL/tools/vector.o
 
 .PHONY: clean-src-2f-GDL-2f-tools
 

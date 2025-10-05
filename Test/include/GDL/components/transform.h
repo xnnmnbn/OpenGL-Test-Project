@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../tools/vector3.h"
 #include "../graphics/model.h"
 #include <vector>
 
@@ -19,17 +18,17 @@ private:
 
 
 public:
-	gdl::tools::Vector3 local_position;
-	gdl::tools::Vector3 local_rotation;
-	gdl::tools::Vector3 local_scale;
+	glm::vec3 local_position;
+	glm::vec3 local_rotation;
+	glm::vec3 local_scale;
 
-	gdl::tools::Vector3 position;
-	gdl::tools::Vector3 rotation;
-	gdl::tools::Vector3 scale;
+	glm::vec3 position;
+	glm::vec3 rotation;
+	glm::vec3 scale;
 
-	gdl::tools::Vector3 right;
-	gdl::tools::Vector3 up;
-	gdl::tools::Vector3 forward;
+	glm::vec3 right;
+	glm::vec3 up;
+	glm::vec3 forward;
 
 	Transform(gdl::graphics::Model* m = NULL);
 

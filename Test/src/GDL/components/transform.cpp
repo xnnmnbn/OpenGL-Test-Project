@@ -9,13 +9,13 @@
 namespace gdl::components {
 
 Transform::Transform(gdl::graphics::Model* m) : model(m) {
-	local_scale.x = 1;
-	local_scale.y = 1;
-	local_scale.z = 1;
+	this->local_position = {0, 0, 0};
+	this->local_rotation = {0, 0, 0};
+	this->local_scale = {1, 1, 1};
 
-	scale.x = 1;
-	scale.y = 1;
-	scale.z = 1;
+	this->position = {0, 0, 0};
+	this->rotation = {0, 0, 0};
+	this->scale = {1, 1, 1};
 
 	parent = NULL;
 }
@@ -75,7 +75,7 @@ void Transform::update(Transform& t){
 
 	t.local_matrix = glm::mat4(1.0);
 
-	t.local_matrix = glm::translate(t.local_matrix, glm::vec3(t.local_position.x, t.local_position.y, t.local_position.z));
+	t.local_matrix = glm::translate(t.local_matrix, glm::vec3(t.local_position.x, -t.local_position.y, t.local_position.z));
 	t.local_matrix = glm::rotate(t.local_matrix, glm::radians(t.local_rotation.x), glm::vec3(1, 0, 0));
 	t.local_matrix = glm::rotate(t.local_matrix, glm::radians(t.local_rotation.y), glm::vec3(0, 1, 0));
 	t.local_matrix = glm::rotate(t.local_matrix, glm::radians(t.local_rotation.z), glm::vec3(0, 0, 1));
@@ -88,35 +88,15 @@ void Transform::update(Transform& t){
 		t.world_matrix = t.local_matrix;
 	}
 
-	glm::vec3 pos(t.world_matrix[3]);
+	t.position = glm::vec3(t.world_matrix[3]);
 
-	t.position.x = pos.x;
-	t.position.y = pos.y;
-	t.position.z = pos.z;
+	t.right = glm::normalize(glm::vec3(t.world_matrix[0]));
+	t.up = glm::normalize(glm::vec3(t.world_matrix[1]));
+	t.forward = glm::normalize(glm::vec3(t.world_matrix[2]));
 
-	glm::vec3 r = glm::normalize(glm::vec3(t.world_matrix[0]));
-	glm::vec3 u = glm::normalize(glm::vec3(t.world_matrix[1]));
-	glm::vec3 f = glm::normalize(glm::vec3(t.world_matrix[2]));
+	glm::mat3 rot(t.right, t.up, t.forward);
 
-	t.right.x = r.x;
-	t.right.y = r.y;
-	t.right.z = r.z;
-
-	t.up.x = u.x;
-	t.up.y = u.y;
-	t.up.z = u.z;
-
-	t.forward.x = f.x;
-	t.forward.y = f.y;
-	t.forward.z = f.z;
-
-	glm::mat3 rot(r, u, f);
-
-	glm::vec3 euler = glm::degrees(glm::eulerAngles(glm::quat_cast(rot)));
-
-	t.rotation.x = euler.x;
-	t.rotation.y = euler.y;
-	t.rotation.z = euler.z;
+	t.rotation = glm::degrees(glm::eulerAngles(glm::quat_cast(rot)));
 
 }
 

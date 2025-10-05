@@ -6,10 +6,10 @@
 inline static gdl::graphics::Mesh m_square(){
 	static std::vector<gdl::graphics::Vertex> vert;
 
-    vert.push_back({ gdl::tools::Vector3(-0.5f,  0.5f, 0.0f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f,  0.5f, 0.0f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f, -0.5f, 0.0f) });
-	vert.push_back({ gdl::tools::Vector3(-0.5f, -0.5f, 0.0f) });
+    vert.push_back({ glm::vec3(-0.5f,  0.5f, 0.0f) });
+	vert.push_back({ glm::vec3( 0.5f,  0.5f, 0.0f) });
+	vert.push_back({ glm::vec3( 0.5f, -0.5f, 0.0f) });
+	vert.push_back({ glm::vec3(-0.5f, -0.5f, 0.0f) });
 
 	static std::vector<u32> idx = {
 		0, 1, 2,
@@ -22,15 +22,15 @@ inline static gdl::graphics::Mesh m_square(){
 inline static gdl::graphics::Mesh m_cube(){
 	static std::vector<gdl::graphics::Vertex> vert;
 
-    vert.push_back({ gdl::tools::Vector3(-0.5f,  0.5f,  0.5f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f,  0.5f,  0.5f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f, -0.5f,  0.5f) });
-	vert.push_back({ gdl::tools::Vector3(-0.5f, -0.5f,  0.5f) });
+    vert.push_back({ glm::vec3(-0.5f,  0.5f,  0.5f) });
+	vert.push_back({ glm::vec3( 0.5f,  0.5f,  0.5f) });
+	vert.push_back({ glm::vec3( 0.5f, -0.5f,  0.5f) });
+	vert.push_back({ glm::vec3(-0.5f, -0.5f,  0.5f) });
 
-    vert.push_back({ gdl::tools::Vector3(-0.5f,  0.5f, -0.5f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f,  0.5f, -0.5f) });
-	vert.push_back({ gdl::tools::Vector3( 0.5f, -0.5f, -0.5f) });
-	vert.push_back({ gdl::tools::Vector3(-0.5f, -0.5f, -0.5f) });
+    vert.push_back({ glm::vec3(-0.5f,  0.5f, -0.5f) });
+	vert.push_back({ glm::vec3( 0.5f,  0.5f, -0.5f) });
+	vert.push_back({ glm::vec3( 0.5f, -0.5f, -0.5f) });
+	vert.push_back({ glm::vec3(-0.5f, -0.5f, -0.5f) });
 
 	static std::vector<u32> idx = {
 		0, 1, 2, //front

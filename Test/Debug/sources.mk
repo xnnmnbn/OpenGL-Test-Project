@@ -32,6 +32,7 @@ OBJS :=
 SUBDIRS := \
 src/GDL/components \
 src/GDL/engine \
+src/GDL/game \
 src/GDL/graphics \
 src/GDL/tools \
 src/glad \

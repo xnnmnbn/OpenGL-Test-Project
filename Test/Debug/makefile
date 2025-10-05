@@ -11,6 +11,7 @@ RM := rm -rf
 -include src/glad/subdir.mk
 -include src/GDL/tools/subdir.mk
 -include src/GDL/graphics/subdir.mk
+-include src/GDL/game/subdir.mk
 -include src/GDL/engine/subdir.mk
 -include src/GDL/components/subdir.mk
 -include src/subdir.mk

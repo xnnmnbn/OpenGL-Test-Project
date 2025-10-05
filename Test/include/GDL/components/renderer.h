@@ -2,7 +2,7 @@
 
 #include "transform.h"
 #include "../graphics/shader.h"
-#include "../engine/camera.h"
+#include "../game/camera.h"
 
 namespace gdl::components {
 
@@ -14,7 +14,7 @@ private:
 public:
 	Renderer(gdl::components::Transform& t);
 
-	void draw(gdl::graphics::Shader& shader, gdl::engine::Camera& camera);
+	void draw(gdl::graphics::Shader& shader, gdl::Camera& camera);
 };
 
 }

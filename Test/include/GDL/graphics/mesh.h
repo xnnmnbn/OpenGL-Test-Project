@@ -1,11 +1,9 @@
 #pragma once
 
 #include "shader.h"
-#include "../engine/camera.h"
-
-#include <vector>
 #include "../tools/typedefs.h"
-#include "../tools/vector3.h"
+#include <vector>
+#include <glm/glm.hpp>
 
 namespace gdl::graphics {
 
@@ -13,7 +11,7 @@ namespace gdl::graphics {
 
 
 struct Vertex{
-	gdl::tools::Vector3 position;
+	glm::vec3 position;
 };
 
 class Mesh{

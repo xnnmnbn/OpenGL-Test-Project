@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mesh.h"
-#include <glm/glm.hpp>
 
 namespace gdl::graphics {
 
