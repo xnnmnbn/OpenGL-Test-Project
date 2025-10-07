@@ -8,7 +8,7 @@
 
 namespace gdl::components {
 
-Transform::Transform(gdl::graphics::Model* m) : model(m) {
+Transform::Transform(gdl::Model* m) : model(m) {
 	this->local_position = {0, 0, 0};
 	this->local_rotation = {0, 0, 0};
 	this->local_scale = {1, 1, 1};
@@ -24,7 +24,7 @@ glm::mat4& Transform::get_matrix(){
 	return world_matrix;
 }
 
-gdl::graphics::Model* Transform::get_model(){
+gdl::Model* Transform::get_model(){
 
 	if(model) return model;
 

@@ -2,7 +2,7 @@
 
 #include <GLFW/glfw3.h>
 
-namespace gdl::engine {
+namespace gdl {
 
 std::array<bool, MAX_KEYS> Input::key_now;
 std::array<bool, MAX_KEYS> Input::key_last;

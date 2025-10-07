@@ -2,18 +2,18 @@
 
 #include "mesh.h"
 
-namespace gdl::graphics {
+namespace gdl {
 
 class Model{
 private:
-	std::vector<gdl::graphics::Mesh> meshes;
+	std::vector<gdl::Mesh> meshes;
 
 public:
 
-	Model(const std::vector<gdl::graphics::Mesh>& meshes);
-	Model(const gdl::graphics::Mesh& mesh);
+	Model(const std::vector<gdl::Mesh>& meshes);
+	Model(const gdl::Mesh& mesh);
 
-	std::vector<gdl::graphics::Mesh>& get_meshes();
+	std::vector<gdl::Mesh>& get_meshes();
 };
 
 

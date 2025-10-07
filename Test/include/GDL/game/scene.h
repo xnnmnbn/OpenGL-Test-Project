@@ -6,12 +6,16 @@
 
 #include "gameobject.h"
 #include "camera.h"
+#include "../graphics/model.h"
 
 namespace gdl {
 
 class Scene{
 public:
 	entt::registry registry;
+	GameObject* camera;
+
+	GameObject* create_object(Model* model = NULL);
 
 
 

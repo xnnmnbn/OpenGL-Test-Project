@@ -11,7 +11,7 @@ private:
 	Transform* parent;
 	std::vector<Transform*> children;
 
-	gdl::graphics::Model* model;
+	gdl::Model* model;
 
 	glm::mat4 world_matrix;
 	glm::mat4 local_matrix;
@@ -30,12 +30,12 @@ public:
 	glm::vec3 up;
 	glm::vec3 forward;
 
-	Transform(gdl::graphics::Model* m = NULL);
+	Transform(gdl::Model* m = NULL);
 
 	Transform* get_child(u32 idx);
 
 	glm::mat4& get_matrix();
-	gdl::graphics::Model* get_model();
+	gdl::Model* get_model();
 
 	void set_parent(Transform* t);
 	void remove_child(Transform* t);

@@ -9,12 +9,12 @@ namespace gdl::components {
 class Renderer{
 private:
 	gdl::components::Transform* t;
-	gdl::graphics::Model* m;
+	gdl::Model* m;
 
 public:
 	Renderer(gdl::components::Transform& t);
 
-	void draw(gdl::graphics::Shader& shader, gdl::Camera& camera);
+	void draw(gdl::Shader& shader, gdl::Camera& camera);
 };
 
 }

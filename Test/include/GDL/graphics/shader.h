@@ -7,7 +7,7 @@
 #include "../tools/typedefs.h"
 
 
-namespace gdl::graphics {
+namespace gdl {
 
 
 class Shader{

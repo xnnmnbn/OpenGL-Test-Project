@@ -5,7 +5,7 @@
 
 f32 last = 0;
 
-namespace gdl::engine {
+namespace gdl {
 
 f32 Time::time;
 f32 Time::delta;

@@ -1,7 +1,7 @@
 #include "../../../include/GDL/graphics/mesh.h"
 #include "../../../include/glad/glad.h"
 
-namespace gdl::graphics{
+namespace gdl {
 
 
 Mesh::Mesh(const std::vector<Vertex>& vert, const std::vector<u32> idx) : vertices(vert), indices(idx) {
@@ -24,7 +24,7 @@ Mesh::Mesh(const std::vector<Vertex>& vert, const std::vector<u32> idx) : vertic
 	glBindVertexArray(0);
 }
 
-void Mesh::draw(gdl::graphics::Shader& shader){
+void Mesh::draw(gdl::Shader& shader){
 
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, (u32)indices.size(), GL_UNSIGNED_INT, 0);

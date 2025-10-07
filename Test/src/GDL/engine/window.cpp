@@ -6,7 +6,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height){
 }
 
 
-namespace gdl::engine {
+namespace gdl {
 
 
 

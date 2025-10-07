@@ -2,15 +2,30 @@
 #include "../../../include/GDL/game/camera.h"
 
 #include "../../../include/GDL/game/gameobject.h"
+
 #include "../../../include/GDL/components/transform.h"
+#include "../../../include/GDL/components/renderer.h"
 
 
 namespace gdl {
 
 Scene::Scene(){
-	GameObject camera(this->registry, true);
+	camera = new GameObject(this->registry);
 
-	camera.add_component<gdl::Camera>();
+	camera->add_component<gdl::Camera>();
+}
+
+GameObject* Scene::create_object(Model* model){
+
+	GameObject* obj = new GameObject(this->registry);
+
+	if(!model) return obj;
+
+	return obj
+			->add_component<gdl::components::Transform>(model)
+			->add_component<gdl::components::Renderer>(
+				obj->get_component<gdl::components::Transform>()
+			);
 }
 
 

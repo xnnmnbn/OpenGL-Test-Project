@@ -5,7 +5,7 @@
 #include <vector>
 #include <glm/glm.hpp>
 
-namespace gdl::graphics {
+namespace gdl {
 
 
 
@@ -23,7 +23,7 @@ public:
 
 	Mesh(const std::vector<Vertex>& vert, const std::vector<u32> idx);
 
-	void draw(gdl::graphics::Shader& shader);
+	void draw(gdl::Shader& shader);
 };
 
 

@@ -7,7 +7,7 @@
 #include "../tools/typedefs.h"
 
 
-namespace gdl::engine {
+namespace gdl {
 
 
 class Window{

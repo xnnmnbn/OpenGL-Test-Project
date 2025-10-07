@@ -2,7 +2,7 @@
 #include "../../../include/glad/glad.h"
 
 
-namespace gdl::graphics {
+namespace gdl {
 
 
 Shader::Shader(const str& vert_path, const str& frag_path){

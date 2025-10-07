@@ -3,7 +3,7 @@
 #include <array>
 #include <GLFW/glfw3.h>
 
-namespace gdl::engine {
+namespace gdl {
 
 #define MAX_KEYS (GLFW_KEY_LAST + 1)
 #define MAX_BUTTONS (GLFW_MOUSE_BUTTON_LAST + 1)

@@ -11,18 +11,20 @@ private:
 
 public:
 
-	GameObject(entt::registry& reg, bool add_trans = true, bool add_rend = false);
+	GameObject(entt::registry& reg);
 
 	template<typename T, typename... Args>
-	inline T& add_component(Args&&... args){
+	inline GameObject*& add_component(Args&&... args){
 		reg->emplace<T>(id, std::forward<Args>(args)...);
 
-		return reg->get<T>(id);
+		return (this);
 	}
 
 	template<typename T>
-	inline void remove_component(){
+	inline GameObject*& remove_component(){
 		reg->remove<T>(id);
+
+		return this;
 	}
 
 	template<typename T>

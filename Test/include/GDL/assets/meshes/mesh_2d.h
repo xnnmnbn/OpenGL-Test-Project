@@ -3,8 +3,8 @@
 #include "../../graphics/mesh.h"
 
 
-inline static gdl::graphics::Mesh m_square(){
-	static std::vector<gdl::graphics::Vertex> vert;
+inline static gdl::Mesh m_square(){
+	static std::vector<gdl::Vertex> vert;
 
     vert.push_back({ glm::vec3(-0.5f,  0.5f, 0.0f) });
 	vert.push_back({ glm::vec3( 0.5f,  0.5f, 0.0f) });
@@ -16,11 +16,11 @@ inline static gdl::graphics::Mesh m_square(){
 		2, 3, 0
 	};
 
-	return gdl::graphics::Mesh(vert, idx);
+	return gdl::Mesh(vert, idx);
 }
 
-inline static gdl::graphics::Mesh m_cube(){
-	static std::vector<gdl::graphics::Vertex> vert;
+inline static gdl::Mesh m_cube(){
+	static std::vector<gdl::Vertex> vert;
 
     vert.push_back({ glm::vec3(-0.5f,  0.5f,  0.5f) });
 	vert.push_back({ glm::vec3( 0.5f,  0.5f,  0.5f) });
@@ -53,7 +53,7 @@ inline static gdl::graphics::Mesh m_cube(){
 
 	};
 
-	return gdl::graphics::Mesh(vert, idx);
+	return gdl::Mesh(vert, idx);
 }
 
 
